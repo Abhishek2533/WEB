@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <input class="display" type="text" placeholder="0">
+        <div class="keypad">
+            <div class="row">
+                <button id="adv-func" onclick="pow()" style="background-color: aqua; color: white;">x<sup>2</sup></button>
+                <button id="adv-func" onclick="sqrt()" style="background-color: aqua; color: white;"><span style='font-size:18px;'>&#8730;</span></button>
+                <button id="adv-func" onclick="sin()" style="background-color: aqua; color: white;">sin</button>
+                <button id="adv-func" onclick="cos()" style="background-color: aqua; color: white;">cos</button>
+                <button onclick="Ac()" id="Ac" style="color: white; background: #ff00f2b8;">AC</button>
+                <button onclick="Delete()" id="Dlt" style="color: white; background: #00ff00;">Del</button>
+            </div>
+            <div class="row">
+                <button id="adv-func" onclick="Fact()" style="background-color: aqua; color: white;">x!</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+            </div>
+            <div class="row">
+                <button id="adv-func" onclick="l=Log()" style="background-color: aqua; color: white;">log</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button> 
+                <button class="btn" style="font-size: 18px;">÷</button> 
+                <button class="btn">x</button> 
+            </div>
+            <div class="row">
+                <button id="adv-func" class="btn" style="background-color: aqua; color: white;">%</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">-</button>
+                <button class="btn">+</button>
+            </div>
+            <div class="row">
+                <button id="adv-func" class="btn" style="background-color: aqua; color: white;">π</button>
+                <button class="btn">0</button>
+                <button class="btn">00</button>
+                <button class="btn" style="font-size: 20px;">.</button>
+                <button onclick="Plusminus()">+/-</button>
+                <button id="eval" onclick="screen.value = eval(screen.value)" style="color: white; background: #ff9900;">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
