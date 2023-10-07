@@ -4,114 +4,116 @@
 }
 
 body{
-    /* background: white; */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #ecf0f3;
+    background: #23242a;
 }
 
 .main {
-    min-width: 40vw;
-    max-width: auto;
-    min-height: 60vh;
-    max-height: auto;
-    background: #cbced1;
+    position: relative;
+    cursor: pointer;
+    min-width: 38vw;
+    min-height: 70vh;
+    background: linear-gradient(#000000 20%,#ff0000 1200%);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 12px 12px 20px #000000,
+                -12px -12px 20px #000000;
+}
+
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(20deg,transparent, red);
+    transform-origin: bottom right;
+    animation: animate 3s linear infinite;
+}
+
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.calculator {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 12px 12px 20px #cbced1,
-                -12px -12px 20px #ffffff;
+    inset: 2px;
+    border-radius: 20px;
+    background: #28292d;
+    z-index: 10;
 }
 
+
+
 .display {
-    margin: 10px;
+    margin: 30px 0 10px 0;
     width: 80%;
-    height: 100px;
+    height: 3em;
     font-size: xx-large;
     outline: none;
     border: none;
     text-align: right;
     padding-right: 0.5em;
-    background: whitesmoke;
+    background: #2f2e2e;
+    color: white;
     border-radius: 6px;
-    box-shadow: inset 4px 4px 4px #cbced1,
-                inset -4px -4px 4px #cbced1;
-            }
+    box-shadow: inset 2px 2px 2px #cbced1,
+                inset -2px -2px 2px #cbced1;
+}
             
 .keypad {
-    margin-top: 50px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    position: relative;
     display: flex;
     flex-direction: column;
     row-gap: 2ch;
+    width: 100%;
+    font-weight: bolder;
 }
 
 .row {
     display: flex;
-    column-gap: 2ch;
+    justify-content: center;
+    column-gap: 3%;
 }
 
 .row button {
     border: none;
     outline: none;
-    width: 80px;
-    height: 30px;
+    min-width:10%;
+    min-height: 5vh;
     margin: 5px;
     border-radius: 4px;
-    box-shadow: 4px 4px 4px #cbced1,
-             -4px -4px 4px #ffffff;
-             transition: .1;
+    background-color: black;
+    color: #ff0000;
+    border: 1px solid#ff0000;
+    cursor: pointer;
+    text-shadow: 0 0 0 red;
+    box-shadow: 0 0 5px red;
 }
 
 .row button:hover {
-    box-shadow: inset 5px 5px 5px rgba(16,16,16,.1),
-                inset -5px -5px 5px #fff;
-                background: #fff;
-}
-
-#Ac {
-    box-shadow: 4px 4px 3px #ff00f2b8,
-             -4px -4px 17px #ffffff;
-             transition: .1;
-}
-
-#Ac:hover {
-    box-shadow: inset 5px 5px 5px #ff03eeb8,
-                inset -5px -5px 5px #f951eeb8;
-}
-
-#Dlt {
-    box-shadow: 4px 4px 3px #00ff00,
-             -4px -4px 17px #ffffff;
-             transition: .1;
-}
-
-#Dlt:hover {
-    box-shadow: inset 5px 5px 5px #00ff00,
-                inset -5px -5px 5px #64fd64;
-}
-
-
-#eval {
-    box-shadow: 4px 4px 3px #ff9900,
-             -4px -4px 17px #ffffff;
-             transition: .1;
-}
-
-#eval:hover {
-    box-shadow: inset 5px 5px 5px #ff9900,
-                inset -5px -5px 5px #f7af44;
-}
-
-#adv-func {
-    box-shadow: 4px 4px 3px aqua,
-             -4px -4px 17px #ffffff;
-             transition: .1;
-}
-
-#adv-func:hover {
-    box-shadow: inset 5px 5px 5px aqua,
-                inset -5px -5px 5px rgb(58, 255, 255);
+    box-shadow: 0 0 20px red;
+    transition: .2s;
+    background: red;
+    color: white;
+    transform: scale(1.1);
 }

@@ -18,10 +18,13 @@ for (item of input) {
 }
 
 
+//all clear function
 function Ac() {
     screen.value = "";
 }
 
+
+//delete function
 function Delete() {
     screen.value = screen.value.slice(0, screen.value.length-1);
 }
@@ -32,9 +35,12 @@ function pow() {
     screen.value=Math.pow(screen.value,2);
 }
 
+
+//square root function
 function sqrt() {
     screen.value=Math.sqrt(screen.value);
 }
+
 
 //sin function
 function sin() {
@@ -42,10 +48,14 @@ function sin() {
     screen.value=val;
 }
 
+
+//cos function
 function cos() {
     screen.value=Math.cos(screen.value);
 }
 
+
+//factorial function
 function Fact() {
     let x = screen.value;
     var fact = 1;
@@ -55,11 +65,28 @@ function Fact() {
     screen.value = fact;
 }
 
+
+//logarithmic function
 function Log() {
     screen.value=Math.log(screen.value);
 }
 
+
+//sign conversion
 function Plusminus() {
     let num = screen.value;
     screen.value = num * -1;
+}
+
+
+//pi function
+function Pi() {
+    // val = Math.PI;
+    screen.value = Math.PI;
+}
+
+
+//evaluate function
+function Evaluate() {
+    screen.value = eval(screen.value)
 }
