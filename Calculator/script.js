@@ -26,7 +26,12 @@ function Ac() {
 
 //delete function
 function Delete() {
-    screen.value = screen.value.slice(0, screen.value.length-1);
+    if (screen.value == 'ERROR'){
+        screen.value = '';
+    }
+    else {
+        screen.value = screen.value.slice(0, screen.value.length-1);
+    }
 }
 
 
@@ -86,7 +91,18 @@ function Pi() {
 }
 
 
+
+function hasOnlyNumbersAndOperators(str) {
+    let allValues = /^[0-9+\-*/.()]/;
+    return allValues.test(str);
+}
+
+
 //evaluate function
 function Evaluate() {
-    screen.value = eval(screen.value)
+    if (hasOnlyNumbersAndOperators(screen.value)) {
+        screen.value = eval(screen.value);
+    } else {
+        screen.value = 'ERROR';
+    }
 }
