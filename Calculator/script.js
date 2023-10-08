@@ -94,7 +94,7 @@ function Pi() {
 
 
 function hasOnlyNumbersAndOperators(str) {
-    let allValues = /^[0-9+\-*/.()+$]/;
+    let allValues = /^[0-9+\-*/.()]/;
     return allValues.test(str);
 }
 
