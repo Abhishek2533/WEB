@@ -121,7 +121,8 @@ body{
 
 @media screen and (max-width:750px) {
     .main{
-        min-height: 50%;
+        min-height: 65%;
+        min-width: 80%;
     }
 
     .display {
