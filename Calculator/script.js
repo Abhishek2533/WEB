@@ -1,10 +1,10 @@
-var input = document.querySelectorAll('.btn');
+let inputs = document.querySelectorAll('.btn');
 var screen = document.querySelector('.display');
 
-for (item of input) {
+for (item of inputs ) {
     item.addEventListener('click', (e)=> {
         
-        inputtext = e.target.innerText;
+        let inputtext = e.target.innerText;
         
         if (inputtext == 'x') {
             inputtext='*';
@@ -15,6 +15,7 @@ for (item of input) {
         
         screen.value+= inputtext;
     });
+
 }
 
 
@@ -93,7 +94,7 @@ function Pi() {
 
 
 function hasOnlyNumbersAndOperators(str) {
-    let allValues = /^[0-9+\-*/.()]/;
+    let allValues = /^[0-9+\-*/.()+$]/;
     return allValues.test(str);
 }
 
