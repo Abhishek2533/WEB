@@ -6,6 +6,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     width: 100vw;
+    overflow: hidden;
     background: #222222d1;
 }
 
@@ -15,17 +16,17 @@ body {
     box-shadow: 0 15px 20px #000;
     overflow: hidden;
     width: calc(100vw - 65vw);
-    max-width: 100%;
+    max-width: 80%;
 }
 
 .header {
     background: #151414d1;
-    padding: 30px 0;
+    padding: 15px 0;
 }
 
 .header h2 {
     color: #ff0000;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -86,6 +87,7 @@ body {
     font-size: 16px;
     padding: 15px 0;
     margin-top: 50px;
+    margin-bottom: -10px;
     width: 100%;
     font-weight: bold;
     text-transform: uppercase;
@@ -103,6 +105,6 @@ body {
 @media (max-width: 998px) {
     .container {
         width: calc(100vw - 35vw);
-        max-width: 100%;
+        max-width: 80%;
     }
 }
