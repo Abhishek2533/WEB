@@ -12,18 +12,21 @@ form.addEventListener('submit', (e) => {
     validate();
 })
 
-
+const success = (usernameVal,rate, count) => {
+    if (rate === count)
+        window.alert(`Congratulations ${usernameVal}!!, Your Registration is Successfull!`);
+}
 
 
 // defining successmsg function
-const successMsg = () => {
+const successMsg = (usernameVal) => {
     let formContain = document.getElementsByClassName('form-container');
 
     var count = formContain.length - 1;
     for (var i = 0; i < formContain.length; i++) {
-        if (formContain[i].className === "form-conatriner success") {
+        if (formContain[i].className === "form-container success") {
             var rate = 0 + i;
-            if (rate === count) return true;
+            success(usernameVal, rate, count);
         }
         else {
             return false;
@@ -60,7 +63,7 @@ const validate = () => {
     if (usernameVal === "") {
         setErrorMsg(username, 'username cannot be blank');
     }
-    else if (usernameVal.length <= 2) {
+    else if (usernameVal.length < 5) {
         setErrorMsg(username, 'username must be atleast 3 character long')
     }
     else {
@@ -84,6 +87,9 @@ const validate = () => {
     if (phoneVal === "") {
         setErrorMsg(phone, 'phone cannot be blank');
     }
+    else if (phoneVal === "123456789" || phoneVal === "0123456789" || phoneVal === "1234567890") {
+        setErrorMsg(phone, 'please enter a valid phone number');
+    }
     else if (phoneVal.length != 10) {
         setErrorMsg(phone, 'invalid number')
     }
@@ -96,8 +102,14 @@ const validate = () => {
     if (passwordVal === "") {
         setErrorMsg(password, 'password is required');
     }
-    else if (passwordVal.length <= 6) {
-        setErrorMsg(password, 'minimum 6 character is required')
+    else if (passwordVal == "password" || passwordVal == "PASSWORD" || passwordVal == "Password") {
+        setErrorMsg(password, 'password is not strong use a stronger password');
+    }
+    else if (passwordVal == usernameVal) {
+        setErrorMsg(password, 'passwords should not match the username');
+    }
+    else if (passwordVal.length < 8) {
+        setErrorMsg(password, 'minimum 8 character is required')
     }
     else {
         setSuccessMsg(password);
@@ -117,11 +129,7 @@ const validate = () => {
 
 
     // checking before submission
-    successMsg();
-
-    window.alert(` Congratulations ${usernameVal}, Your Registration is Successfull!`);
-    
-
+    successMsg(usernameVal);
 }
 
 
