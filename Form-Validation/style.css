@@ -16,7 +16,7 @@ body {
     box-shadow: 0 15px 20px #000;
     overflow: hidden;
     /* width: calc(100vw - 65vw); */
-    width: max(400px, 90%);
+    width: max(400px, calc(100vw - 65vw));
 }
 
 .header {
