@@ -13,7 +13,6 @@ body{
 
 .main {
     position: absolute;
-    cursor: pointer;
     min-width: 38%;
     min-height: 70%;
     overflow: hidden;
